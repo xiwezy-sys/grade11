@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grade 11 Writing and APUSH Summer Studio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Course navigation">
+        <div class="brand">
+          <div class="brand-mark">W</div>
+          <div>
+            <p class="eyebrow">Summer Writing Studio</p>
+            <h1>Grade 11 Writing Intensive</h1>
+          </div>
+        </div>
+        <nav class="nav-list">
+          <button class="nav-item active" data-view="dashboard">Dashboard</button>
+          <button class="nav-item" data-view="weeks">12-Week Plan</button>
+          <button class="nav-item" data-view="training">Student Training</button>
+          <button class="nav-item" data-view="apush">APUSH Practice</button>
+          <button class="nav-item" data-view="essays">Essays & Applications</button>
+          <button class="nav-item" data-view="rubric">Rubrics</button>
+          <button class="nav-item" data-view="parent">Parent Review</button>
+          <button class="nav-item" data-view="portfolio">Portfolio</button>
+        </nav>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">For a rising 11th grader in Irvine, CA</p>
+            <h2 id="viewTitle">Dashboard</h2>
+          </div>
+          <div class="actions">
+            <button class="icon-button" id="printBtn" title="Print course pages" aria-label="Print course pages">
+              <span aria-hidden="true">⎙</span>
+            </button>
+            <button class="primary-button" id="exportBtn">Export Progress</button>
+            <label class="import-button" for="importFile">Import Progress</label>
+            <input class="file-input" id="importFile" type="file" accept="application/json" />
+            <button class="primary-button" id="resetBtn">Reset Progress</button>
+          </div>
+        </header>
+
+        <section class="view active" id="dashboard">
+          <div class="hero-band">
+            <div class="hero-copy">
+              <p class="eyebrow">Course Mission</p>
+              <h3>Move from clear writing to analytical, evidence-based, revision-ready writing.</h3>
+              <p>
+                This summer studio is built around three real school needs: AP U.S. History SAQ, DBQ, and LEQ writing;
+                academic essays across junior-year classes; and early preparation for UC and Common App essays.
+                The goal is not to sound fancy. The goal is to think clearly on the page.
+              </p>
+            </div>
+            <div class="skill-map" aria-label="Course skill map">
+              <div class="map-node reading">Reading</div>
+              <div class="map-node thesis">Thesis</div>
+              <div class="map-node evidence">Evidence</div>
+              <div class="map-node revision">Revision</div>
+              <div class="map-line line-a"></div>
+              <div class="map-line line-b"></div>
+              <div class="map-line line-c"></div>
+            </div>
+          </div>
+
+          <div class="metric-grid">
+            <article class="metric">
+              <span>12</span>
+              <p>weeks of structured training</p>
+            </article>
+            <article class="metric">
+              <span>24</span>
+              <p>90-minute lessons</p>
+            </article>
+            <article class="metric">
+              <span>3</span>
+              <p>APUSH writing formats</p>
+            </article>
+            <article class="metric">
+              <span>8+</span>
+              <p>portfolio artifacts</p>
+            </article>
+          </div>
+
+          <div class="two-column">
+            <article class="panel">
+              <h3>Student Profile</h3>
+              <ul class="check-list">
+                <li>Currently in regular English, with most essays scoring 3/4 or higher.</li>
+                <li>Strong speaking and listening skills, natural personal voice, and solid ideas.</li>
+                <li>Interested in literature, history, and social science.</li>
+                <li>Ready to prepare for APUSH, academic essays, and future college application writing.</li>
+              </ul>
+            </article>
+            <article class="panel">
+              <h3>End-of-Summer Goals</h3>
+              <ul class="check-list">
+                <li>Write clear, arguable, precise thesis statements.</li>
+                <li>Build paragraphs with claim, evidence, analysis, and extension.</li>
+                <li>Understand the scoring logic behind SAQ, DBQ, and LEQ responses.</li>
+                <li>Complete one polished academic essay and two early UC PIQ drafts.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="view" id="weeks">
+          <div class="toolbar">
+            <label for="weekSelect">Choose a week</label>
+            <select id="weekSelect"></select>
+            <button class="primary-button" id="markWeekBtn">Toggle Week Complete</button>
+          </div>
+          <div id="weekDetail" class="week-detail"></div>
+          <div class="week-grid" id="weekGrid"></div>
+        </section>
+
+        <section class="view" id="training">
+          <div class="toolbar">
+            <label for="moduleSelect">Choose a training module</label>
+            <select id="moduleSelect"></select>
+            <button class="primary-button" id="saveModuleBtn">Save Responses</button>
+          </div>
+          <div id="trainingDetail"></div>
+        </section>
+
+        <section class="view" id="apush">
+          <div class="three-column">
+            <article class="panel">
+              <h3>SAQ: Precision</h3>
+              <p>The goal is to answer exactly what is asked. Most SAQ parts can be answered in 3-5 focused sentences.</p>
+              <ol>
+                <li><strong>A</strong> Answer the prompt directly.</li>
+                <li><strong>C</strong> Cite a specific historical fact.</li>
+                <li><strong>E</strong> Explain how the fact answers the prompt.</li>
+              </ol>
+            </article>
+            <article class="panel">
+              <h3>DBQ: Document-Based Argument</h3>
+              <p>The goal is to use documents to build a historical argument, not to summarize each document one by one.</p>
+              <ol>
+                <li>Read the prompt and identify the reasoning skill.</li>
+                <li>Group documents by argument.</li>
+                <li>Write a thesis, context, and outside evidence.</li>
+                <li>Use sourcing/HIPP for selected documents.</li>
+              </ol>
+            </article>
+            <article class="panel">
+              <h3>LEQ: Knowledge-Based Argument</h3>
+              <p>Without documents, the writer must organize historical knowledge into a clear line of reasoning.</p>
+              <ol>
+                <li>Causation: causes and effects.</li>
+                <li>Comparison: similarities and differences.</li>
+                <li>CCOT: continuity and change over time.</li>
+              </ol>
+            </article>
+          </div>
+
+          <div class="panel">
+            <h3>APUSH Practice Bank</h3>
+            <div class="prompt-list" id="apushPrompts"></div>
+          </div>
+        </section>
+
+        <section class="view" id="essays">
+          <div class="two-column">
+            <article class="panel">
+              <h3>Academic Essay Framework</h3>
+              <div class="formula">
+                <span>Thesis</span>
+                <span>Topic Sentence</span>
+                <span>Evidence</span>
+                <span>Analysis</span>
+                <span>Complexity</span>
+              </div>
+              <p>
+                The goal is not simply to write more. The goal is to make each paragraph move the argument forward:
+                from a correct point to a meaningful claim, and from evidence placement to evidence explanation.
+              </p>
+            </article>
+            <article class="panel">
+              <h3>Application Essay Preparation</h3>
+              <p>
+                UC PIQs are direct and action-based; Common App writing is more narrative and voice-driven.
+                Before senior year, the best preparation is building a bank of specific, reflective stories.
+              </p>
+            </article>
+          </div>
+          <div class="panel">
+            <h3>Writing Prompt Bank</h3>
+            <div class="prompt-list" id="essayPrompts"></div>
+          </div>
+        </section>
+
+        <section class="view" id="rubric">
+          <div class="rubric-grid" id="rubricGrid"></div>
+          <article class="panel">
+            <h3>Revision Priorities</h3>
+            <ol>
+              <li>Revise the thesis first: Is it specific, arguable, and appropriately scoped?</li>
+              <li>Revise paragraph structure: Does each paragraph make one clear move?</li>
+              <li>Revise evidence: Is there specific textual or historical support?</li>
+              <li>Revise analysis: Does the writer explain why the evidence matters?</li>
+              <li>Revise sentences last: clarity, accuracy, and control.</li>
+            </ol>
+          </article>
+        </section>
+
+        <section class="view" id="parent">
+          <div class="two-column">
+            <article class="panel">
+              <h3>Helpful Parent Questions</h3>
+              <ul class="check-list">
+                <li>Which sentence is your thesis?</li>
+                <li>What is the main point of this paragraph?</li>
+                <li>Why does this evidence prove your claim?</li>
+                <li>Which paragraph feels weakest? Why?</li>
+                <li>If you could revise only one thing, what would you revise?</li>
+              </ul>
+            </article>
+            <article class="panel">
+              <h3>What to Avoid</h3>
+              <ul class="check-list muted">
+                <li>Do not focus only on grammar and spelling.</li>
+                <li>Do not rewrite the student's natural voice into an adult voice.</li>
+                <li>Do not encourage formulaic templates or inflated vocabulary.</li>
+                <li>Do not expect every draft to be perfect; look for visible growth.</li>
+              </ul>
+            </article>
+          </div>
+          <article class="panel">
+            <h3>Signs of Growth</h3>
+            <div class="signal-list">
+              <span>States a thesis in one sentence</span>
+              <span>Uses sharper topic sentences</span>
+              <span>Explains evidence after using it</span>
+              <span>Writes more steadily under time pressure</span>
+              <span>Can identify a weak paragraph</span>
+            </div>
+          </article>
+        </section>
+
+        <section class="view" id="portfolio">
+          <div class="panel">
+            <h3>Summer Portfolio Tracker</h3>
+            <p>Check off completed artifacts. Progress is saved in this browser.</p>
+            <div class="portfolio-list" id="portfolioList"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
